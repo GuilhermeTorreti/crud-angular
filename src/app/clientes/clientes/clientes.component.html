@@ -1,2 +1,26 @@
-<p>clientes works!</p>
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar>Clientes</mat-toolbar>
+<table mat-table [dataSource]="clientes" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nome Completo </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.name }} </td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let cliente"> {{ cliente.email }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  </mat-card-content>
+</mat-card>
 
