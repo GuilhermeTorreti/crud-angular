@@ -3,21 +3,22 @@ import { HttpClient } from '@angular/common/http';
 
 import { Cliente } from '../model/cliente';
 import { delay, first, tap } from 'rxjs';
+import { apiUrl } from 'src/environment/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
 
-  private readonly API = '/assets/clientes.json';
+  private readonly API = 'api/clientes';
 
   constructor(private httpClient: HttpClient) { }
 
   list() {
-    return this.httpClient.get<Cliente[]>(this.API)
+    return this.httpClient.get<Cliente[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(5000),
+      delay(3000),
       tap(clientes => console.log(clientes))
     );
   }

@@ -4,6 +4,7 @@ import { Cliente } from '../model/cliente';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-clientes',
@@ -12,13 +13,15 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 })
 export class ClientesComponent implements OnInit {
   clientes$: Observable<Cliente[]>;
-  displayedColumns = ['name', 'email']
+  displayedColumns = ['_id', 'name', 'email', 'actions']
 
   // clientesService: ClientesService;
 
   constructor(
     private clientesService: ClientesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
     ) {
     // this.clientes = [];
     // this.clientesService = new ClientesService();
@@ -40,5 +43,9 @@ export class ClientesComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  onAdd(){
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 }
