@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ClientesComponent implements OnInit {
   clientes$: Observable<Cliente[]>;
-  displayedColumns = ['_id', 'name', 'email', 'actions']
+  displayedColumns = ['name', 'email', 'actions']
 
   // clientesService: ClientesService;
 
