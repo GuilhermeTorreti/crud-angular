@@ -1,3 +1,5 @@
+import { ClientesComponent } from './../clientes/clientes.component';
+import { Cliente } from './../model/cliente';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';

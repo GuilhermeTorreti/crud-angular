@@ -1,5 +1,4 @@
-export interface Cliente {
-  id: string;
+export interface Funcionario{
   name: string;
   cpf: number;
   address: string;
