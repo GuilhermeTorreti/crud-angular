@@ -7,10 +7,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { VeiculosComponent } from './veiculos/veiculos.component';
+import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VeiculosComponent,
+    VeiculoFormComponent
   ],
   imports: [
     BrowserModule,
