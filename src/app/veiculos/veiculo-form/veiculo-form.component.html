@@ -1,0 +1,40 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title>Adicionar Veiculo</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="min-width">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Placa" formControlName="placa">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Marca" formControlName="marca">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Modelo" formControlName="modelo">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Ano" formControlName="ano">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Disponível" formControlName="disponivel">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Condições" formControlName="condicoes">
+      </mat-form-field>
+
+  </form>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
