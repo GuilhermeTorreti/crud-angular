@@ -23,11 +23,21 @@
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Disponível" formControlName="disponivel">
+        <mat-label>Disponível</mat-label>
+        <mat-select formControlName="disponivel">
+          <mat-option value="Sim">Sim</mat-option>
+          <mat-option value="Nao">Não</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Condições" formControlName="condicoes">
+        <mat-label>Condições</mat-label>
+        <mat-select formControlName="condicoes">
+          <mat-option value="Perfeita">Perfeita</mat-option>
+          <mat-option value="Boa">Boa</mat-option>
+          <mat-option value="Ruim">Ruim</mat-option>
+          <mat-option value="Pessimo">Péssimo</mat-option>
+        </mat-select>
       </mat-form-field>
 
   </form>

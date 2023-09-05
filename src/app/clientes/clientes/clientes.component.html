@@ -39,6 +39,38 @@
           </td>
         </ng-container>
 
+        <!-- Endereco Column -->
+        <ng-container matColumnDef="endereco">
+          <th mat-header-cell *matHeaderCellDef> Endereço </th>
+          <td mat-cell *matCellDef="let cliente"> {{ cliente.endereco }}
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          </td>
+        </ng-container>
+
+        <!-- Nº Column -->
+        <ng-container matColumnDef="numero">
+          <th mat-header-cell *matHeaderCellDef> Nº </th>
+          <td mat-cell *matCellDef="let cliente"> {{ cliente.numero }}
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          </td>
+        </ng-container>
+
+        <!-- Bairro Column -->
+        <ng-container matColumnDef="bairro">
+          <th mat-header-cell *matHeaderCellDef> Bairro </th>
+          <td mat-cell *matCellDef="let cliente"> {{ cliente.bairro }}
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          </td>
+        </ng-container>
+
+        <!-- Cep Column -->
+        <ng-container matColumnDef="cep">
+          <th mat-header-cell *matHeaderCellDef> CEP </th>
+          <td mat-cell *matCellDef="let cliente"> {{ cliente.cep }}
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          </td>
+        </ng-container>
+
 
           <!-- Actions Column -->
 <ng-container matColumnDef="actions">
