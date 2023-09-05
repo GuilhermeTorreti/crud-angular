@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { VeiculosComponent } from './veiculos.component';
 import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 import { VeiculosRoutingModule } from './veiculos-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { VeiculosRoutingModule } from './veiculos-routing.module';
     VeiculosRoutingModule,
     AppMaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class VeiculosModule { }

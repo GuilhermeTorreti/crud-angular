@@ -5,7 +5,9 @@ import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 
 const routes: Routes = [
   { path: '', component: VeiculosComponent },
-  { path: 'new', component: VeiculoFormComponent }
+  { path: 'new', component: VeiculoFormComponent },
+  { path: 'edit/:id', component: VeiculoFormComponent },
+
 ];
 
 @NgModule({

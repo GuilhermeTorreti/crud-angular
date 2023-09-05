@@ -48,6 +48,10 @@ export class ClientesComponent implements OnInit {
   onAdd(){
     this.router.navigate(['new'], {relativeTo: this.route});
   }
+
+  onEdit(cliente: Cliente){
+    this.router.navigate([`edit/${cliente._id}`], {relativeTo: this.route});
+  }
   onDelete(clienteId: string): void {
     const confirmDelete = confirm('Tem certeza de que deseja excluir este cliente?');
 

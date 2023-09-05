@@ -32,6 +32,11 @@ export class FuncionariosComponent implements OnInit  {
       })
     );
   }
+
+  onEdit(funcionario: Funcionario){
+    this.router.navigate([`edit/${funcionario._id}`], {relativeTo: this.route});
+  }
+
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg
@@ -44,5 +49,22 @@ export class FuncionariosComponent implements OnInit  {
 
   onAdd(){
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  onDelete(funcionarioId: string): void {
+    const confirmDelete = confirm('Tem certeza de que deseja excluir este cliente?');
+
+    if (confirmDelete) {
+      this.funcionariosService.delete(funcionarioId)
+        .subscribe(
+          () => {
+            // Recarregue a lista de clientes após a exclusão (ou atualize o Observable 'funcionarios$')
+            this.funcionarios$ = this.funcionariosService.list();
+          },
+          (error) => {
+            this.onError('Erro ao excluir o funcionario.');
+          }
+        );
+    }
   }
 }

@@ -1,5 +1,5 @@
 export interface Funcionario {
-  id: string;
+  _id: string;
   name: string;
   cpf: number;
   address: string;
@@ -7,4 +7,5 @@ export interface Funcionario {
   bairro: string;
   telefone: number;
   email: string;
+  gender: string;
 }

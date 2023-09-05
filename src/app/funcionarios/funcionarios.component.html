@@ -85,12 +85,12 @@
               </button>
             </mat-header-cell>
 
-            <mat-cell *matCellDef="let cliente">
-              <button mat-icon-button color="primary" aria-label="Editar Cliente">
+            <mat-cell *matCellDef="let funcionario">
+              <button mat-icon-button color="primary" aria-label="Editar Funcionario" (click)="onEdit(funcionario)">
                 <mat-icon>edit</mat-icon>
               </button>
 
-              <button mat-mini-fab color="warning" aria-label="Remover Cliente">
+              <button mat-mini-fab color="warning" aria-label="Remover Funcionario" (click)="onDelete(funcionario._id)">
                 <mat-icon>delete</mat-icon>
               </button>
             </mat-cell>

@@ -5,7 +5,8 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 
 const routes: Routes = [
   { path: '', component: FuncionariosComponent },
-  { path: 'new', component: FuncionarioFormComponent }
+  { path: 'new', component: FuncionarioFormComponent },
+  { path: 'edit/:id', component: FuncionarioFormComponent },
 ];
 
 @NgModule({

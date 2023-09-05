@@ -81,7 +81,7 @@
   </mat-header-cell>
 
   <mat-cell *matCellDef="let cliente">
-    <button mat-icon-button color="primary" aria-label="Editar Cliente">
+    <button mat-icon-button color="primary" aria-label="Editar Cliente" (click)="onEdit(cliente)">
       <mat-icon>edit</mat-icon>
     </button>
 

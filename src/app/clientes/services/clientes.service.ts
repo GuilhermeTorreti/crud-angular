@@ -24,11 +24,24 @@ export class ClientesService {
     );
   }
 
+  getById(id:number){
+    return this.httpClient.get<Cliente>(`${apiUrl}/${this.API}/${id}`)
+    .pipe(
+      first(),
+      delay(2000),
+      tap(cliente => console.log(cliente))
+    );
+  }
+
   save(record: Cliente){
     return this.httpClient.post<Cliente>(this.API, record);
   }
+
+  update(record: Cliente, clienteId: number){
+    return this.httpClient.put<Cliente>(`${apiUrl}/${this.API}/${clienteId}`, record);
+  }
   delete(clienteId: string): Observable<Cliente> {
     const url = `${this.API}/clientes/${clienteId}`;
-    return this.httpClient.delete<Cliente>(url);
+    return this.httpClient.delete<Cliente>(`${apiUrl}/${this.API}/${clienteId}`);
 }
 }

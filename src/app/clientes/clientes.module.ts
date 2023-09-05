@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { ClientesComponent } from './clientes/clientes.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ClientesComponent } from './clientes/clientes.component';
     ClientesRoutingModule,
     AppMaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class ClientesModule { }

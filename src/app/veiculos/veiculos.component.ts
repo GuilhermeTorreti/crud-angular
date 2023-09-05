@@ -44,4 +44,25 @@ export class VeiculosComponent implements OnInit {
   onAdd(){
     this.router.navigate(['new'], {relativeTo: this.route});
   }
+
+  onEdit(veiculo: Veiculo){
+    this.router.navigate([`edit/${veiculo._id}`], {relativeTo: this.route});
+  }
+
+  onDelete(veiculoId: string): void {
+    const confirmDelete = confirm('Tem certeza de que deseja excluir este Veiculo?');
+
+    if (confirmDelete) {
+      this.veiculosService.delete(veiculoId)
+        .subscribe(
+          () => {
+            // Recarregue a lista de clientes após a exclusão (ou atualize o Observable 'funcionarios$')
+            this.veiculos$ = this.veiculosService.list();
+          },
+          (error) => {
+            this.onError('Erro ao excluir o veiculo.');
+          }
+        );
+    }
+  }
 }

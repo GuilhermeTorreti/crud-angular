@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FuncionariosComponent } from './funcionarios.component';
 import { FuncionariosRoutingModule } from './funcionarios-routing.module';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
     FuncionariosRoutingModule,
     AppMaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class FuncionariosModule { }
