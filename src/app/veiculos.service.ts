@@ -15,7 +15,7 @@ export class VeiculosService {
     return this.httpClient.get<Veiculo[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(3000),
+      delay(2000),
       tap(veiculos => console.log(veiculos))
     );
   }

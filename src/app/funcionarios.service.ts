@@ -15,7 +15,7 @@ export class FuncionariosService {
     return this.httpClient.get<Funcionario[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(3000),
+      delay(2000),
       tap(funcionarios => console.log(funcionarios))
     );
   }

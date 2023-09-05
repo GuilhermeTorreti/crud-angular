@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Cliente } from '../model/cliente';
 import { delay, first, tap } from 'rxjs';
 import { apiUrl } from 'src/environment/api';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ClientesService {
     return this.httpClient.get<Cliente[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(3000),
+      delay(2000),
       tap(clientes => console.log(clientes))
     );
   }
@@ -26,4 +27,8 @@ export class ClientesService {
   save(record: Cliente){
     return this.httpClient.post<Cliente>(this.API, record);
   }
+  delete(clienteId: string): Observable<Cliente> {
+    const url = `${this.API}/clientes/${clienteId}`;
+    return this.httpClient.delete<Cliente>(url);
+}
 }

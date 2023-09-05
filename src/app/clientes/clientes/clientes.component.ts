@@ -48,4 +48,22 @@ export class ClientesComponent implements OnInit {
   onAdd(){
     this.router.navigate(['new'], {relativeTo: this.route});
   }
+  onDelete(clienteId: string): void {
+    const confirmDelete = confirm('Tem certeza de que deseja excluir este cliente?');
+
+    if (confirmDelete) {
+      this.clientesService.delete(clienteId)
+        .subscribe(
+          () => {
+            // Recarregue a lista de clientes após a exclusão (ou atualize o Observable 'clientes$')
+            this.clientes$ = this.clientesService.list();
+          },
+          (error) => {
+            this.onError('Erro ao excluir o cliente.');
+          }
+        );
+    }
+  }
+
+
 }
