@@ -30,6 +30,7 @@ export class FuncionarioFormComponent implements OnInit {
       numero: [null],
       bairro: [null],
       cep: [null],
+      cargo: [null],
     });
   }
 
