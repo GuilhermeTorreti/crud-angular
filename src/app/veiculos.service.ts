@@ -15,7 +15,6 @@ export class VeiculosService {
     return this.httpClient.get<Veiculo[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(2000),
       tap(veiculos => console.log(veiculos))
     );
   }
@@ -24,7 +23,6 @@ export class VeiculosService {
     return this.httpClient.get<Veiculo>(`${apiUrl}/${this.API}/${id}`)
     .pipe(
       first(),
-      delay(2000),
       tap(veiculo => console.log(veiculo))
     );
   }

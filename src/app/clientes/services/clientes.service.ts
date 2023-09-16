@@ -19,7 +19,6 @@ export class ClientesService {
     return this.httpClient.get<Cliente[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(2000),
       tap(clientes => console.log(clientes))
     );
   }
@@ -28,7 +27,6 @@ export class ClientesService {
     return this.httpClient.get<Cliente>(`${apiUrl}/${this.API}/${id}`)
     .pipe(
       first(),
-      delay(2000),
       tap(cliente => console.log(cliente))
     );
   }

@@ -15,7 +15,6 @@ export class FuncionariosService {
     return this.httpClient.get<Funcionario[]>(`${apiUrl}/${this.API}`)
     .pipe(
       first(),
-      delay(2000),
       tap(funcionarios => console.log(funcionarios))
     );
   }
@@ -24,7 +23,6 @@ export class FuncionariosService {
     return this.httpClient.get<Funcionario>(`${apiUrl}/${this.API}/${id}`)
     .pipe(
       first(),
-      delay(2000),
       tap(funcionario => console.log(funcionario))
     );
   }
