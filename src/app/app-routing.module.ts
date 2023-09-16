@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'clientes' },
   {
+    path: 'locacoes',
+    loadChildren: () => import('./locacao/locacao.module').then(m => m.LocacaoModule)
+  },
+  {
     path: 'clientes',
     loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
   },
@@ -15,7 +19,6 @@ const routes: Routes = [
     path: 'veiculos',
     loadChildren: () => import('./veiculos/veiculos.module').then(m => m.VeiculosModule)
   },
-
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)

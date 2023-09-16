@@ -1,0 +1,83 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar>Locações</mat-toolbar>
+    <div *ngIf="locacoes$ | async as locacoes; else loading">
+      <table mat-table [dataSource]="locacoes" class="mat-elevation-z8">
+        <ng-container matColumnDef="dataLoc">
+          <th mat-header-cell *matHeaderCellDef>Data Locação</th>
+          <td mat-cell *matCellDef="let locacao">{{ onConvertDate(locacao.dataLoc) }}</td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="dataDevolucao">
+          <th mat-header-cell *matHeaderCellDef>Data Devolução</th>
+          <td mat-cell *matCellDef="let locacao">
+            {{ onConvertDate(locacao.dataDevolucao) }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="funcionario">
+          <th mat-header-cell *matHeaderCellDef>Funcionario</th>
+          <td mat-cell *matCellDef="let locacao">
+            {{ locacao.funcionario.name }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="veiculo">
+          <th mat-header-cell *matHeaderCellDef>Veículo</th>
+          <td mat-cell *matCellDef="let locacao">
+            {{locacao.veiculo.marca}}/{{locacao.veiculo.modelo}} {{locacao.veiculo.ano}}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="cliente">
+          <th mat-header-cell *matHeaderCellDef>Cliente</th>
+          <td mat-cell *matCellDef="let locacao">
+            {{locacao.cliente.name}}
+          </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef colspan="2">
+            <button
+              mat-mini-fab
+              color="accent"
+              aria-label="Adicionar Veiculo"
+              (click)="onAdd()"
+              class="action-column-header"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </th>
+
+          <td mat-cell *matCellDef="let locacao">
+            <button
+              mat-icon-button
+              color="primary"
+              aria-label="Editar Locação"
+              (click)="onEdit(locacao)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button
+              mat-mini-fab
+              color="warning"
+              aria-label="Remover Locação"
+              (click)="onDelete(locacao._id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <ng-template #loading>
+      <div class="loading-spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
