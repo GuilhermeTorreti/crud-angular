@@ -1,0 +1,24 @@
+<div>
+   <div style="display: grid; justify-content: center; align-items: center; margin-top: 80px;">
+      <mat-toolbar style="display: flex; justify-content: center;">
+        <span>LOGIN</span>
+      </mat-toolbar>
+      <mat-card class="card">
+        <mat-card-content style="display: flex; justify-content: center">
+          <form class="form-style">
+            <mat-form-field class="full-width">
+              <mat-label>Usuário</mat-label>
+              <input matInput name="usuario" [(ngModel)]="usuario"/>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>Senha</mat-label>
+              <input matInput name="senha" type="password" [(ngModel)]="senha" />
+            </mat-form-field>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="onLogin()">LOGIN</button>
+        </mat-card-actions>
+      </mat-card>
+   </div>
+</div>

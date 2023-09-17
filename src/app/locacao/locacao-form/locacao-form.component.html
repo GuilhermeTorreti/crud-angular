@@ -5,26 +5,35 @@
 
   <mat-card-content>
     <form [formGroup]="form" class="min-width">
+      
       <mat-form-field class="full-width">
+        <mat-label>Data da Locação</mat-label>
         <input
           matInput
           type="date"
-          placeholder="Data da Locação"
           formControlName="dataLoc"
         />
       </mat-form-field>
 
       <mat-form-field class="full-width">
+        <mat-label>Data da Devolução</mat-label>
         <input
           matInput
           type="date"
-          placeholder="Data da Devolução"
           formControlName="dataDevolucao"
         />
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Valor" formControlName="valor" />
+        <mat-label>Valor</mat-label>
+        <input matInput currencyMask currencyMask
+        [options]="{
+          prefix: 'R$ ',
+          thousands: '.',
+          decimal: ',',
+          align: 'left'
+        }"
+     formControlName="valor" />
       </mat-form-field>
 
       <mat-form-field class="full-width">

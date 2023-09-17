@@ -4,27 +4,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SharedModule } from '../shared/shared.module';
-import { LocacaoComponent } from './locacao.component';
 import { RouterModule } from '@angular/router';
-import { LocacaoFormComponent } from './locacao-form/locacao-form.component';
-import { LocacaoRoutingModule } from './locacao-routing.module';
-import { CurrencyMaskModule } from 'ng2-currency-mask';
+import {  LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
 
 
 @NgModule({
   declarations: [
-    LocacaoComponent,
-    LocacaoFormComponent
+   LoginComponent
   ],
   imports: [
     CommonModule,
-    LocacaoRoutingModule,
+    LoginRoutingModule,
     AppMaterialModule,
     SharedModule,
     ReactiveFormsModule,
     RouterModule,
-    FormsModule,
-    CurrencyMaskModule
+    FormsModule
   ]
 })
-export class LocacaoModule { }
+export class LoginModule { }

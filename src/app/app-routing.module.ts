@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'clientes' },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   {
     path: 'locacoes',
     loadChildren: () => import('./locacao/locacao.module').then(m => m.LocacaoModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'clientes',

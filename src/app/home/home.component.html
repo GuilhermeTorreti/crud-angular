@@ -1,15 +1,15 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="showMenu" >
   <mat-toolbar color="primary">
     <span class="navbar-brand">Sistema de Locação de Veículos</span>
+    
   </mat-toolbar>
   <br>
   <div class="mt-3" style="margin-left: 25px;">
-    <!--<a routerLink="/home" class="btn btn-custom">Home</a>-->
     <a routerLink="./clientes" class="btn btn-custom">Clientes</a>
     <a routerLink="./funcionarios" class="btn btn-custom">Funcionários</a>
     <a routerLink="./veiculos" class="btn btn-custom">Veículos</a>
     <a routerLink="./locacoes" class="btn btn-custom">Locações</a>
-    <!-- Adicione outros links conforme necessário -->
+    <a routerLink="./login" class="btn btn-custom">Sair</a>
   </div>
   <br>
 </div>
