@@ -1,5 +1,5 @@
 export interface Funcionario {
-  _id: string;
+  _id: number;
   name: string;
   cpf: number;
   endereco: string;

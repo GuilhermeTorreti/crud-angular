@@ -25,9 +25,9 @@ export class LocacaoFormComponent {
   veiculos!: Veiculo[]
   clientes!: Cliente[]
 
-  veiculoSelecionado!: Veiculo
-  funcionarioSelecionado!: Funcionario
-  clienteSelecionado!: Cliente
+  veiculoSelecionado!: number
+  funcionarioSelecionado!: number
+  clienteSelecionado!: number
   constructor(private formBuilder: FormBuilder,
     private service: LocacaoService,
     private funcionarioService: FuncionariosService,
@@ -60,9 +60,9 @@ export class LocacaoFormComponent {
               this.form.patchValue(response)
               this.editMode = true
               this.idLocacaoEdit = id
-              this.veiculoSelecionado = response.veiculo
-              this.funcionarioSelecionado = response.funcionario
-              this.clienteSelecionado = response.cliente
+              this.veiculoSelecionado = response.veiculo._id
+              this.funcionarioSelecionado = response.funcionario._id
+              this.clienteSelecionado = response.cliente._id
             }
           })
         }
@@ -88,9 +88,9 @@ export class LocacaoFormComponent {
     const valores = this.form.value
     const form = {
       ...valores,
-      funcionarioId: valores.funcionario._id,
-      veiculoId: valores.veiculo._id,
-      clienteId: valores.cliente._id,
+      funcionarioId: valores.funcionario,
+      veiculoId: valores.veiculo,
+      clienteId: valores.cliente,
     }
     if(!this.editMode){
       this.service.save(form)

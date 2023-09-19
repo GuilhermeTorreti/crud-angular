@@ -40,7 +40,7 @@
         <mat-label>Veículo</mat-label>
         <mat-select [(ngModel)]="veiculoSelecionado" formControlName="veiculo">
           <mat-option
-            *ngFor="let veiculo of veiculos" [value]="veiculo"
+            *ngFor="let veiculo of veiculos" [value]="veiculo._id"
           >
             {{ veiculo.marca }}/{{ veiculo.modelo }} {{ veiculo.ano }}
           </mat-option>
@@ -50,7 +50,7 @@
       <mat-form-field class="full-width">
         <mat-label>Cliente</mat-label>
         <mat-select [(ngModel)]="clienteSelecionado" formControlName="cliente">
-          <mat-option *ngFor="let cliente of clientes" [value]="cliente">
+          <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
             {{ cliente.name }}
           </mat-option>
         </mat-select>
@@ -63,7 +63,7 @@
         formControlName="funcionario"
         >
           <mat-option
-            *ngFor="let funcionario of funcionarios" [value]="funcionario"
+            *ngFor="let funcionario of funcionarios" [value]="funcionario._id"
           >
             {{ funcionario.name }}
           </mat-option>

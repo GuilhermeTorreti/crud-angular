@@ -3,7 +3,7 @@ import { Funcionario } from "src/app/funcionarios/model/funcionario";
 import { Veiculo } from "src/app/veiculos/model/veiculos";
 
 export interface Locacao {
-  _id: string;
+  _id: number;
   dataLoc: string
   dataDevolucao: string
   valor: number
