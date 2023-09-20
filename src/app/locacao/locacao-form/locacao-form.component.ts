@@ -36,9 +36,9 @@ export class LocacaoFormComponent {
     private snackBar: MatSnackBar,
     private location: Location,
     private route: ActivatedRoute) {
-    
 
-    
+
+
   }
 
   ngOnInit(): void {
@@ -79,7 +79,7 @@ export class LocacaoFormComponent {
     this.clienteService.list().subscribe((response) => {
       this.clientes = response
     })
-    
+
   }
 
 
@@ -107,12 +107,12 @@ export class LocacaoFormComponent {
   }
 
   private onSuccess(){
-    this.snackBar.open('Veiculo Salvo com Sucesso', '', { duration: 3000 });
+    this.snackBar.open('Locação Salva com Sucesso', '', { duration: 3000 });
     this.onCancel();
   }
 
   private onError(){
-    this.snackBar.open('Erro ao Adicionar Veiculo', '', { duration: 3000 });
+    this.snackBar.open('Erro ao Adicionar Locação', '', { duration: 3000 });
   }
 
 }
